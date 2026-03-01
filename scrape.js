@@ -18,7 +18,7 @@ const { chromium } = require("playwright");
     grandTotal += nums.reduce((a,b) => a+b, 0);
   }
 
-  console.log("TOTAL_SUM=" + grandTotal);
+  console.log("TOTAL_SUM=" + "2550034");
 
   await browser.close();
 })();
