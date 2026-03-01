@@ -5,7 +5,6 @@ const { chromium } = require("playwright");
   const page = await browser.newPage();
 
   const seeds = [25,26,27,28,29,30,31,32,33,34];
-
   let grandTotal = 0;
 
   for (const s of seeds) {
@@ -16,13 +15,10 @@ const { chromium } = require("playwright");
       tds.map(td => parseFloat(td.innerText)).filter(n => !isNaN(n))
     );
 
-    const sum = nums.reduce((a,b) => a+b, 0);
-    grandTotal += sum;
-
-    console.log(`Seed ${s} sum = ${sum}`);
+    grandTotal += nums.reduce((a,b) => a+b, 0);
   }
 
-  console.log("FINAL_TOTAL =", grandTotal);
+  console.log("TOTAL_SUM=" + grandTotal);
 
   await browser.close();
 })();
